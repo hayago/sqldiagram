@@ -18,4 +18,5 @@ type Column struct {
 	IsFK     bool
 	IsUnique bool
 	ReferTo  []string
+	Comment  string
 }

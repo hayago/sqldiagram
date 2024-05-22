@@ -49,9 +49,14 @@ func parseCreateTable(stmt *ast.CreateTableStmt, current []Table) []Table {
 		referTo := foreignKeys.Get(colName)
 
 		var isPK, isFK, isUnique bool
+		var comment string
 		for _, opt := range c.Options {
 			isPK = isPK || opt.Tp == ast.ColumnOptionPrimaryKey
 			isUnique = isUnique || opt.Tp == ast.ColumnOptionUniqKey
+
+			if opt.Tp == ast.ColumnOptionComment {
+				comment = opt.Expr.(ast.ValueExpr).GetDatumString()
+			}
 
 			if opt.Refer != nil {
 				isFK = true
@@ -66,6 +71,7 @@ func parseCreateTable(stmt *ast.CreateTableStmt, current []Table) []Table {
 			IsFK:     foreignKeys.Has(colName) || isFK,
 			IsUnique: uniqueKeys.Has(colName) || isUnique,
 			ReferTo:  common.UniqueSlice(referTo),
+			Comment:  comment,
 		})
 	}
 

@@ -144,7 +144,11 @@ var d2TemplateText = `
 			}
 
 			{{- range $col := $table.Columns}}
-				{{column $col.Name}}: {{$col.Type}} {{constraint $col}}
+				{{- if ne $col.Comment "" }}
+					{{column (printf "%s（%s）" $col.Name $col.Comment)}}: {{$col.Type}} {{constraint $col}}
+				{{- else}}
+					{{column $col.Name}}: {{$col.Type}} {{constraint $col}}
+				{{- end}}
 			{{- end}}
 		}
 	{{- end}}
@@ -191,7 +195,11 @@ var d2TemplateText = `
 					}
 
 					{{- range $col := $table.Columns}}
-						{{column $col.Name}}: {{$col.Type}} {{constraint $col}}
+						{{- if ne $col.Comment "" }}
+							{{column (printf "%s（%s）" $col.Name $col.Comment)}}: {{$col.Type}} {{constraint $col}}
+						{{- else}}
+							{{column $col.Name}}: {{$col.Type}} {{constraint $col}}
+						{{- end}}
 					{{- end}}
 				}
 			{{- end}}

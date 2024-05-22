@@ -113,4 +113,28 @@ func Test_parseCreateTable(t *testing.T) {
 
 	assert.Equal(t, "name", columns[3].Name)
 	assert.Equal(t, "VARCHAR", columns[3].Type)
+
+	// Create query with comments
+	node = parseSingleQuery(`
+	CREATE TABLE person (
+		id   INT          NOT NULL COMMENT 'Unique ID',
+		name VARCHAR(255) NOT NULL COMMENT 'Full name'
+	)`)
+
+	stmtTable = node.(*ast.CreateTableStmt)
+	tables = parseCreateTable(stmtTable, nil)
+	assert.Len(t, tables, 1)
+
+	table = tables[0]
+	columns = table.Columns
+	assert.Equal(t, "person", table.Name)
+	assert.Len(t, columns, 2)
+
+	assert.Equal(t, "id", columns[0].Name)
+	assert.Equal(t, "INT", columns[0].Type)
+	assert.Equal(t, "Unique ID", columns[0].Comment)
+
+	assert.Equal(t, "name", columns[1].Name)
+	assert.Equal(t, "VARCHAR", columns[1].Type)
+	assert.Equal(t, "Full name", columns[1].Comment)
 }
