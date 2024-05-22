@@ -1,8 +1,8 @@
 package mysql
 
 import (
-	"github.com/RadhiFadlillah/sqldiagram/internal/common"
-	. "github.com/RadhiFadlillah/sqldiagram/internal/model"
+	"github.com/hayago/sqldiagram/internal/common"
+	. "github.com/hayago/sqldiagram/internal/model"
 	"github.com/pingcap/tidb/parser/ast"
 )
 

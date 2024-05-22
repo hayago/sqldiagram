@@ -6,8 +6,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	. "github.com/RadhiFadlillah/sqldiagram/internal/model"
-	"github.com/RadhiFadlillah/sqldiagram/internal/mysql"
+	. "github.com/hayago/sqldiagram/internal/model"
+	"github.com/hayago/sqldiagram/internal/mysql"
 	"github.com/pingcap/tidb/parser"
 	_ "github.com/pingcap/tidb/types/parser_driver"
 	"github.com/urfave/cli/v2"

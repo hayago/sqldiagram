@@ -1,3 +1,5 @@
+# This repository is forked from https://github.com/RadhiFadlillah/sqldiagram
+
 # SQLDiagram [![PayPal][paypal-badge]][paypal] [![Ko-fi][kofi-badge]][kofi]
 
 SQLDiagram is CLI app to generate ERD from SQL files. It's inspired by service like [DBDiagram] or [DrawSQL] except its offline. It works by parsing your SQL files then convert it to ERD using [D2] diagramming language.
@@ -20,7 +22,7 @@ SQLDiagram is CLI app to generate ERD from SQL files. It's inspired by service l
 If go already installed on your system, and `$GOBIN` is added to your `$PATH`, then you can install it by simply running:
 
 ```
-go install -v github.com/RadhiFadlillah/sqldiagram
+go install -v github.com/hayago/sqldiagram
 ```
 
 ## Features

@@ -4,7 +4,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/RadhiFadlillah/sqldiagram/internal/cmd"
+	"github.com/hayago/sqldiagram/internal/cmd"
 )
 
 func main() {

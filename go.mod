@@ -1,4 +1,4 @@
-module github.com/RadhiFadlillah/sqldiagram
+module github.com/hayago/sqldiagram
 
 go 1.20
 

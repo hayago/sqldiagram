@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"text/template"
 
-	"github.com/RadhiFadlillah/sqldiagram/internal/common"
-	. "github.com/RadhiFadlillah/sqldiagram/internal/model"
+	"github.com/hayago/sqldiagram/internal/common"
+	. "github.com/hayago/sqldiagram/internal/model"
 	"oss.terrastruct.com/d2/d2graph"
 	"oss.terrastruct.com/d2/d2layouts/d2elklayout"
 	"oss.terrastruct.com/d2/d2lib"

@@ -3,7 +3,7 @@ package mysql
 import (
 	"testing"
 
-	. "github.com/RadhiFadlillah/sqldiagram/internal/model"
+	. "github.com/hayago/sqldiagram/internal/model"
 	"github.com/pingcap/tidb/parser/ast"
 	"github.com/stretchr/testify/assert"
 )
